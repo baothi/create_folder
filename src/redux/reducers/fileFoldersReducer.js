@@ -1,6 +1,5 @@
 import * as types from "../actionsTypes/fileFoldersActionTypes";
 
-
 const initialState = {
   isLoading: true,
   currentFolder: "root",

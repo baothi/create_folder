@@ -9,14 +9,15 @@ const HomeComponent = () => {
     isLoading: state.filefolders.isLoading,
     userFolders: state.filefolders.userFolders,
   }), shallowEqual)
+  console.log("isLoading : ", isLoading)
   return (
     <div className='col-md-12 w-100'>
       {
         isLoading ? (<h1 className='display-1 my-5 text-center'>Loading...</h1>)
                   : (
                     <>
-                      <ShowItems title={"Created Folders"} items={userFolders} />
-                      <ShowItems title={"Created File"} items={files} />
+                      <ShowItems title={"Created Folders"} type={"folder"} items={userFolders} />
+                      <ShowItems title={"Created File"} type={"file"} items={files} />
                     </>
                   )
 

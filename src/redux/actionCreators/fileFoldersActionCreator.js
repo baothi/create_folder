@@ -36,6 +36,7 @@ export const createFolder = (data) => (dispatch) => {
 };
 
 export const getFolders = (userId) => (dispatch) => {
+  dispatch(setLoading(true));
   fire
     .firestore()
     .collection("folders")
