@@ -7,7 +7,7 @@ import HomeComponent from '../../components/DashboardComponents/HomeComponent/Ho
 import Navbar from '../../components/DashboardComponents/Navbar/Navbar';
 import SubBar from '../../components/DashboardComponents/SubBar/SubBar';
 import { getFolders } from '../../redux/actionCreators/fileFoldersActionCreator';
-
+import { Route, Routes } from 'react-router-dom';
 
 const DashboardPage = () => {
 
@@ -46,7 +46,10 @@ const DashboardPage = () => {
       <SubBar
         setIsCreateFolderModalOpen={setIsCreateFolderModalOpen} 
       />
-      <HomeComponent />
+      <Routes>
+        <Route path="" elements={<HomeComponent />} />
+      </Routes>
+      
     </>
   )
 }
