@@ -23,7 +23,7 @@ const NavigationComponent = () => {
                 </p>
               </li>
               <li className="nav-item mx-2">
-                <Link to="/Dashboard" className="btn btn-primary btn-sm">Dashboard</Link>
+                <Link to="/dashboard" className="btn btn-primary btn-sm">Dashboard</Link>
               </li>
               <li className="nav-item">
                 <button 

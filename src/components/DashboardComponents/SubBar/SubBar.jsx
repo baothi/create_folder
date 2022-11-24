@@ -2,11 +2,20 @@ import React from 'react'
 import "./SubBar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt, faFileUpload, faFolderPlus } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const SubBar = ({setIsCreateFolderModalOpen}) => {
   return (
     <nav className="navbar navbar-expand-lg mt-2 navbar-light bg-white py-2">
-      <p className='ms-4'>Root</p>
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item"><Link to="/dashboard">Root</Link></li>
+          <li className="breadcrumb-item active" aria-current="page">
+            new Folder
+          </li>
+        </ol>
+      </nav>
+      
       <ul className='navbar-nav ms-auto me-5'>
         <li className="nav-item mx-2">
           <button className="btn btn-outline-dark">

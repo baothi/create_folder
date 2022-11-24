@@ -8,6 +8,7 @@ import Navbar from '../../components/DashboardComponents/Navbar/Navbar';
 import SubBar from '../../components/DashboardComponents/SubBar/SubBar';
 import { getFolders } from '../../redux/actionCreators/fileFoldersActionCreator';
 import { Route, Routes } from 'react-router-dom';
+import FolderComponent from '../../components/DashboardComponents/FolderComponent/FolderComponent';
 
 const DashboardPage = () => {
 
@@ -15,8 +16,8 @@ const DashboardPage = () => {
   
 
   const {isLoggedIn, isLoading, userId } = useSelector((state) => ({
-    isLoggedIn:state.auth.isAuthenticated,
-    isLoading:state.filefolders.isLoading,
+    isLoggedIn: state.auth.isAuthenticated,
+    isLoading: state.filefolders.isLoading,
     userId: state.auth.user.uid,
   }),shallowEqual);
   
@@ -30,7 +31,7 @@ const DashboardPage = () => {
   },[]);
   
   useEffect(() =>{
-    if(!isLoading && !userId) {
+    if(isLoading && userId) {
       dispatch(getFolders(userId));
     }
   },[isLoading,userId, dispatch]);
@@ -47,7 +48,8 @@ const DashboardPage = () => {
         setIsCreateFolderModalOpen={setIsCreateFolderModalOpen} 
       />
       <Routes>
-        <Route path="" elements={<HomeComponent />} />
+        <Route path="" element={<HomeComponent />} />
+        <Route path="folder/:folderId" element={<FolderComponent />} />
       </Routes>
       
     </>

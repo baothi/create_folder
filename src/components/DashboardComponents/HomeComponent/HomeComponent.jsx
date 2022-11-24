@@ -9,7 +9,6 @@ const HomeComponent = () => {
     isLoading: state.filefolders.isLoading,
     userFolders: state.filefolders.userFolders,
   }), shallowEqual)
-  console.log("isLoading : ", isLoading)
   return (
     <div className='col-md-12 w-100'>
       {
